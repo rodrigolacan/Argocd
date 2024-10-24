@@ -27,6 +27,8 @@ spec:
           ports:
             - name: httpsport
               containerPort: 8443
+            - name: httport
+              containerPort: 8080
             - name: jnlpport
               containerPort: 50000
           env:
