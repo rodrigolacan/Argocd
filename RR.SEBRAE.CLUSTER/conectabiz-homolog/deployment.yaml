@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: conecta-busines
+  namespace: conectabiz-homolog
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: conectabiz
+  template:
+    metadata:
+      labels:
+        app: conectabiz
+    spec:
+      imagePullSecrets:
+        - name: harbor-secret
+      containers:
+        - name: apache-facilita
+          image: harbor.rr.sebrae.com.br/sebrae.rr.conectabiz-homolog/conectabiz:v1.0.10
+          ports:
+            - containerPort: 80
+            - containerPort: 443
+          env:
+            - name: SCRIPT_NAME
+              value: script-ssl.sh
+          volumeMounts:
+            - name: tls-secret
+              mountPath: /etc/ssl/certs
+              readOnly: true
+            - name: laravel-env-volume
+              mountPath: /var/www/html/.env
+              subPath: .env
+      volumes:
+        - name: tls-secret
+          secret:
+            secretName: ssl-sebrae
+        - name: laravel-env-volume
+          configMap:
+            name: laravel-staging-env

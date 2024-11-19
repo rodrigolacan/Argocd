@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins
+  namespace: devops-tools
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins-server
+  template:
+    metadata:
+      labels:
+        app: jenkins-server
+    spec:
+      securityContext:
+        fsGroup: 1000
+        runAsUser: 1000
+      serviceAccountName: jenkins-admin
+      containers:
+        - name: jenkins
+          image: jenkins/jenkins:lts
+          resources:
+            requests:
+              memory: "500Mi"
+              cpu: "500m"
+          ports:
+            - name: httpsport
+              containerPort: 8443
+            - name: httpport
+              containerPort: 8080
+            - name: jnlpport
+              containerPort: 50000
+          env:
+            - name: JENKINS_OPTS
+              value: "--httpPort=-1 --httpsPort=8443 --httpsKeyStore=/var/run/secrets/tls/jenkins-keystore.jks --httpsKeyStorePassword=WaNeB#T1%Sc"
+            - name: JAVA_OPTS
+              value: "-Djavax.net.ssl.trustStore=/dev/null -Djavax.net.ssl.trustStorePassword=changeit -Dcom.sun.net.ssl.checkRevocation=false -Dhttps.protocols=TLSv1.2"
+          volumeMounts:
+            - name: jenkins-tls
+              mountPath: /var/run/secrets/tls
+              readOnly: true
+            - name: jenkins-data
+              mountPath: /var/jenkins_home
+      volumes:
+        - name: jenkins-data
+          persistentVolumeClaim:
+            claimName: jenkins-pv-claim
+        - name: jenkins-tls
+          secret:
+            secretName: ssl-sebrae

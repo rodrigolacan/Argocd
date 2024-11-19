@@ -1,0 +1,51 @@
+apiVersion: v1
+data:
+  allowRedirects: |
+    - https://argocd.rr.sebrae.com.br/api/dex
+  dex.config: |
+    connectors:
+      - type: ldap
+        name: ActiveDirectory
+        id: ad
+        config:
+          host: RRSRVAD02.rr.sebrae.corp:636  # Altere para o host correto
+          insecureNoSSL: false
+          insecureSkipVerify: true  # Para ignorar verificações de certificado, se necessário
+
+          bindDN: "$dex.ldap.bindDN"  # Altere para o DN do seu serviço
+          bindPW: "$dex.ldap.bindPW"  # Use variáveis de ambiente para senhas
+
+          usernamePrompt: Email Address
+
+          userSearch:
+            baseDN: dc=rr,dc=sebrae,dc=corp  # BaseDN para busca de usuários
+            filter: ""  # Filtro para objetos de usuários
+            username: sAMAccountName  # Atributo usado para autenticação
+            idAttr: distinguishedName  # Atributo para identificação do usuário
+            emailAttr: userPrincipalName  # Atributo para o e-mail
+            nameAttr: displayName  # Atributo para o nome
+
+          groupSearch:
+            baseDN: dc=rr,dc=sebrae,dc=corp  # BaseDN para busca de grupos
+            filter: "(objectClass=group)"  # Filtro para objetos de grupo
+
+            userMatchers:  # Usando userMatchers para correspondência
+              - userAttr: distinguishedName  # Atributo do usuário
+                groupAttr: member  # Atributo do grupo que contém membros
+
+            nameAttr: cn  # Atributo para o nome do grupo
+  url: https://argocd.rr.sebrae.com.br
+  account.admin: apiKey, login
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app.kubernetes.io/name":"argocd-cm","app.kubernetes.io/part-of":"argocd"},"name":"argocd-cm","namespace":"argocd"}}
+  creationTimestamp: "2024-10-23T12:12:42Z"
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: argocd
+  name: argocd-cm
+  namespace: argocd
+  resourceVersion: "152365"
+  uid: 8a9ff245-b282-4163-aa57-8eaa3f85f6d6

@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: facilita
+  namespace: facilita-prod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: facilita
+  template:
+    metadata:
+      labels:
+        app: facilita
+    spec:
+      imagePullSecrets:
+        - name: harbor-secret
+      containers:
+        - name: apache-facilita
+          image: harbor.rr.sebrae.com.br/sebrae.rr.facilita.producao/facilita:v1.0.9
+          ports:
+            - containerPort: 80
+            - containerPort: 443
+          env:
+            - name: SCRIPT_NAME
+              value: script-ssl.sh
+            - name: SERVER_NAME
+              value: 10.23.6.15
+          volumeMounts:
+            - name: tls-secret
+              mountPath: /etc/ssl/certs
+              readOnly: true
+            - name: laravel-env-volume
+              mountPath: /var/www/.env
+              subPath: .env
+      volumes:
+        - name: tls-secret
+          secret:
+            secretName: ssl-sebrae
+        - name: laravel-env-volume
+          configMap:
+            name: laravel-staging-env

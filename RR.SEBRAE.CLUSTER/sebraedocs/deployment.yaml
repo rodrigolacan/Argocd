@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sebraedocs-deployment
+  namespace: sebraedocs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sebraedocs
+  template:
+    metadata:
+      labels:
+        app: sebraedocs
+    spec:
+      imagePullSecrets:
+        - name: harbor-secret
+      containers:
+        - name: sebraedocs-mkdocs
+          image: harbor.rr.sebrae.com.br/sebrae-docs/sebraedocs:v1.0.2
+          ports:
+            - containerPort: 8000
