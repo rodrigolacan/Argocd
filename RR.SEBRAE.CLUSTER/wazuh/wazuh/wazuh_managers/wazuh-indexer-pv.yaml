@@ -14,4 +14,12 @@ spec:
   volumeMode: Filesystem
   hostPath:
     path: /data/wazuh-indexer
-
+  
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - rrsrvworker
