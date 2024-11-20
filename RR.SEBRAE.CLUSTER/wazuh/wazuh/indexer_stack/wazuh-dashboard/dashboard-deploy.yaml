@@ -32,7 +32,7 @@ spec:
             secretName: dashboard-certs
       containers:
         - name: wazuh-dashboard
-          image: 'wazuh/wazuh-dashboard:4.9.2'
+          image: 'wazuh/wazuh-dashboard:4.8.0'
           resources:
           volumeMounts:
             - name: config
