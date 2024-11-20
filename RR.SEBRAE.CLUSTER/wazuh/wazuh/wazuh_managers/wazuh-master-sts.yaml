@@ -41,11 +41,8 @@ spec:
         fsGroup: 101
       containers:
         - name: wazuh-manager
-          image: 'wazuh/wazuh-manager:4.9.2'
+          image: 'wazuh/wazuh-manager:4.8.0'
           resources:
-            limits:
-              cpu: 400m
-              memory: 512Mi
           securityContext:
             capabilities:
               add: ["SYS_CHROOT"]

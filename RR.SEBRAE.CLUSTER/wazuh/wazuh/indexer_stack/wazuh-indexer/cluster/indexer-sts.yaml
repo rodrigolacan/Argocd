@@ -59,11 +59,8 @@ spec:
             privileged: true
       containers:
         - name: wazuh-indexer
-          image: 'wazuh/wazuh-indexer:4.9.2'
+          image: 'wazuh/wazuh-indexer:4.8.0'
           resources:
-            limits:
-              cpu: 500m
-              memory: 1564Mi
           env:
             - name: OPENSEARCH_JAVA_OPTS
               value: '-Xms1g -Xmx1g -Dlog4j2.formatMsgNoLookups=true'
