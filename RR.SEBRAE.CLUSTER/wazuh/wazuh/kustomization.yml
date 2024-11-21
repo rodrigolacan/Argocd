@@ -41,6 +41,8 @@ configMapGenerator:
   - name: dashboard-conf
     files:
       - indexer_stack/wazuh-dashboard/dashboard_conf/opensearch_dashboards.yml
+    options:
+      disableNameSuffixHash: true
 
 resources:
   - base/wazuh-ns.yaml
