@@ -73,6 +73,8 @@ resources:
   - wazuh_managers/wazuh-indexer-pv.yaml
   - wazuh_managers/wazuh-manager-master-pv.yaml
   - wazuh_managers/wazuh-manager-worker-pv.yaml
+  - wazuh_managers/wazuh-manager-worker-pv-1.yaml
+
 
   - indexer_stack/wazuh-indexer/indexer-svc.yaml
   - indexer_stack/wazuh-indexer/cluster/indexer-api-svc.yaml
