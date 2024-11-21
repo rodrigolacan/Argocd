@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: wazuh-agent
-          image: kennyopennix/wazuh-agent:4.0.0
+          image: kennyopennix/wazuh-agent:4.0.4
           securityContext:
             privileged: true
             env:
@@ -29,13 +29,13 @@ spec:
             - name: JOIN_MANAGER_PROTOCOL
               value: "https"
             - name: NODE_NAME
-              valueFrom:
-                fieldRef:
-                  fieldPath: spec.nodeName
+
             - name: WAZUH_GROUPS
               value: kubernetes-nodes
+            - name: JOIN_MANAGER_USER
+              value: admin 
             - name: JOIN_PASSWORD
-              value: password
+              value: WaNeB#T1%Sc
             - name: JOIN_MANAGER_USER
               valueFrom:
               secretKeyRef:
@@ -49,7 +49,7 @@ spec:
             - name: JOIN_MANAGER_API_PORT
               value: "55000"
             - name: JOIN_MANAGER_PORT
-              value: "1514"
+              value: "1515"
             - name: HEALTH_CHECK_PROCESSES
               value: "ossec-execd,ossec-syscheckd,ossec-logcollector,wazuh-modulesd,ossec-authd"
 
