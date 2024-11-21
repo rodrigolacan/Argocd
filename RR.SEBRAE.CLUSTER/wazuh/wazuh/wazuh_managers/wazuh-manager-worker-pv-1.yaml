@@ -14,7 +14,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: wazuh-storage
   local:
-    path: /mnt/disks/wazuh-manager-worker-1
+    path: /data/wazuh-manager-worker-1
   nodeAffinity:
     required:
       nodeSelectorTerms:
