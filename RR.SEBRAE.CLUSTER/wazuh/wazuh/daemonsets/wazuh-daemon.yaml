@@ -19,9 +19,7 @@ spec:
           image: kennyopennix/wazuh-agent:4.7.2
           securityContext:
             privileged: true
-            env:
-            - name: JOIN_MANAGER
-              value: "wazuh.wazuh.svc.cluster.local"
+          env:
             - name: JOIN_MANAGER_MASTER_HOST
               value: "wazuh.wazuh.svc.cluster.local"
             - name: JOIN_MANAGER_WORKER_HOST
@@ -29,18 +27,14 @@ spec:
             - name: JOIN_MANAGER_PROTOCOL
               value: "https"
             - name: NODE_NAME
-              value: "10.23.6.20"
-            - name: WAZUH_GROUPS
-              value: kubernetes-nodes
-            - name: JOIN_MANAGER_USER
-              value: admin 
-            - name: JOIN_PASSWORD
-              value: WaNeB#T1%Sc
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
             - name: JOIN_MANAGER_USER
               valueFrom:
-              secretKeyRef:
-                name: wazuh-api-cred
-                key: username
+                secretKeyRef:
+                  name: wazuh-api-cred
+                  key: username
             - name: JOIN_MANAGER_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -50,7 +44,3 @@ spec:
               value: "55000"
             - name: JOIN_MANAGER_PORT
               value: "1515"
-            - name: HEALTH_CHECK_PROCESSES
-              value: "ossec-execd,ossec-syscheckd,ossec-logcollector,wazuh-modulesd,ossec-authd"
-
-
