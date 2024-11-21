@@ -17,7 +17,7 @@ spec:
         - name: harbor-secret
       containers:
         - name: apache-facilita
-          image: harbor.rr.sebrae.com.br/sebrae.rr.conectabiz-homolog/conectabiz:v1.0.11
+          image: harbor.rr.sebrae.com.br/sebrae.rr.conectabiz-homolog/conectabiz:v1.0.12
           ports:
             - containerPort: 80
             - containerPort: 443
