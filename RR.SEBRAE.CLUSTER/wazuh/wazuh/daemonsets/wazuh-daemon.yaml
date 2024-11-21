@@ -29,6 +29,9 @@ spec:
             - name: JOIN_MANAGER_PROTOCOL
               value: "https"
             - name: NODE_NAME
+              valueFrom:
+                fieldRef:
+                fieldPath: spec.nodeName
 
             - name: WAZUH_GROUPS
               value: kubernetes-nodes
