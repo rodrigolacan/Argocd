@@ -17,6 +17,6 @@ spec:
         - name: harbor-secret
       containers:
         - name: sebraedocs-mkdocs
-          image: harbor.rr.sebrae.com.br/sebrae-docs/sebraedocs:v1.0.3
+          image: harbor.rr.sebrae.com.br/sebrae-docs/sebraedocs:v1.0.4
           ports:
             - containerPort: 8000
