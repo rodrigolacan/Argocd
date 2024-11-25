@@ -57,3 +57,7 @@ spec:
               containerPort: 8080
             - name: https
               containerPort: 8443
+      volumes:
+        - name: keycloak-certs
+          secret:
+            secretName: keycloak-https-cert
