@@ -29,7 +29,14 @@ spec:
           ports:
             - name: http
               containerPort: 8080
+          volumeMounts:
+            - name: keycloak-config
+              mountPath: /opt/keycloak
           readinessProbe:
             httpGet:
               path: /realms/master
               port: 8080
+      volumes:
+        - name: keycloak-config
+          persistentVolumeClaim:
+            claimName: keycloak-pvc
