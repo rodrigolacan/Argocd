@@ -8,9 +8,9 @@ spec:
     app: jenkins-server
   type: LoadBalancer
   ports:
-    - name: https   # Nome da porta HTTPS
+    - name: https  
       port: 443
       targetPort: 8443
-    - name: http    # Nome da porta HTTP
+    - name: http 
       port: 80
       targetPort: 8080
