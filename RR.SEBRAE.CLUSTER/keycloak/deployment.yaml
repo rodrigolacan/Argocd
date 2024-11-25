@@ -47,6 +47,10 @@ spec:
                 secretKeyRef:
                   name: keycloak-https-cert
                   key: password.txt
+          volumeMounts:
+              - name: keycloak-certs
+                mountPath: /etc/keycloak/certs
+                readOnly: true
 
           ports:
             - name: http
