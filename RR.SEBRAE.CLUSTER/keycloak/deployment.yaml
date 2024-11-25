@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: keycloak
-  namespace: keycloak
   labels:
     app: keycloak
 spec:
@@ -29,10 +28,3 @@ spec:
           ports:
             - name: http
               containerPort: 8080
-          volumeMounts:
-            - mountPath: /opt/keycloak/data
-              name: keycloak-volume
-      volumes:
-        - name: keycloak-volume
-          persistentVolumeClaim:
-            claimName: keycloak-pvc
