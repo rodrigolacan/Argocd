@@ -46,7 +46,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: keycloak-https-cert
-                  key: keycloak-password.txt
+                  key: password.txt
 
           ports:
             - name: http
