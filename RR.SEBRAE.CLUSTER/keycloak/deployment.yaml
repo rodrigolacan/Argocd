@@ -29,4 +29,10 @@ spec:
           ports:
             - name: http
               containerPort: 8080
-  
+          volumeMounts:
+          - mountPath: /opt/keycloak/themes
+            name: keycloak-theme
+      volumes:
+        - name: keycloak-theme
+          persistentVolumeClaim:
+            claimName: keycloak-theme-pvc
