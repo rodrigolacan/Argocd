@@ -40,6 +40,14 @@ spec:
                 secretKeyRef:
                   name: keycloak-db-credentials
                   key: password
+            - name: KC_KEYSTORE_FILE
+              value: "/etc/keycloak/certs/keycloak.jks"
+            - name: KC_KEYSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: keycloak-https-cert
+                  key: keycloak-password.txt
+
           ports:
             - name: http
               containerPort: 8080
