@@ -33,8 +33,6 @@ spec:
               value: "keycloak"
             - name: KC_DB_PASSWORD
               value: "WaNeB#T1%Sc"
-            - name: KC_DB_SCHEMA
-              value: "update"
           ports:
             - name: http
               containerPort: 8080
