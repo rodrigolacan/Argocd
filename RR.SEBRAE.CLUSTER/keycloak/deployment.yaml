@@ -31,7 +31,7 @@ spec:
             - name: http
               containerPort: 8080
           volumeMounts:
-            - mountPath: /opt/keycloak/data
+            - mountPath: /opt/keycloak/
               name: keycloak-volume
       volumes:
         - name: keycloak-volume
