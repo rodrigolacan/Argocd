@@ -35,7 +35,7 @@ spec:
               port: 8080
           volumeMounts:
             - name: keycloak-certs
-              mouthPath: /opt/keycloak/certs
+              mountPath: /opt/keycloak/certs
       volumes:
         - name: keycloak-certs
           persistentVolumeClaim:
