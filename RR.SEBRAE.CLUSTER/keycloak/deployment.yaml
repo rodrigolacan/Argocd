@@ -33,4 +33,10 @@ spec:
             httpGet:
               path: /realms/master
               port: 8080
-      
+          volumeMounts:
+            - name: keycloak-certs
+              mouthPath: /opt/keycloak/certs
+      volumes:
+        - name: keycloak-certs
+          persistentVolumeClaim:
+            claimName: keycloak-pvc
