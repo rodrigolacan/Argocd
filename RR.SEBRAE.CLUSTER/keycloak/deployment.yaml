@@ -30,13 +30,23 @@ spec:
             - name: http
               containerPort: 8080
           volumeMounts:
+            - name: keycloak-certs
+              mountPath: /etc/keycloak/certs
+            - name: keycloak-themes
+              mountPath: /opt/keycloak/themes
             - name: keycloak-config
-              mountPath: /opt/keycloak
+              mountPath: /opt/keycloak/standalone/configuration
           readinessProbe:
             httpGet:
               path: /realms/master
               port: 8080
       volumes:
+        - name: keycloak-certs
+          persistentVolumeClaim:
+            claimName: keycloak-certs-pvc
+        - name: keycloak-themes
+          persistentVolumeClaim:
+            claimName: keycloak-themes-pvc
         - name: keycloak-config
           persistentVolumeClaim:
-            claimName: keycloak-pvc
+            claimName: keycloak-config-pvc
