@@ -5,11 +5,11 @@ metadata:
 spec:
   storageClassName: local-storage
   capacity:
-    storage: 1Gi
+    storage: 10Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /data/keycloak/themes
+    path: /data/keycloak
   nodeAffinity:
     required:
       nodeSelectorTerms:
