@@ -21,9 +21,9 @@ spec:
             privileged: true
           env:
             - name: JOIN_MANAGER_MASTER_HOST
-              value: "wazuh.svc.cluster.local"
+              value: "wazuh.wazuh.svc.cluster.local"
             - name: JOIN_MANAGER_WORKER_HOST
-              value: "wazuh-workers.svc.cluster.local"
+              value: "wazuh-workers.wazuh.svc.cluster.local"
             - name: JOIN_MANAGER_PROTOCOL
               value: "https"
             - name: WAZUH_GROUPS
