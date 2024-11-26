@@ -18,7 +18,6 @@ parameters:
   fromBackup: "" 
   diskSelector: "longhorn" 
   nodeSelector: "rrsrvworker" 
-  numberOfReplicas: "1"
   longhorn.io/snapshot-max-count: "1"
   longhorn.io/snapshot-max-size: "1Gi" 
 allowVolumeExpansion: true
