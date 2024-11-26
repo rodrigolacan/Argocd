@@ -13,12 +13,14 @@ metadata:
   name: wazuh-storage
 provisioner: driver.longhorn.io
 parameters:
-  numberOfReplicas: "3" # Número de réplicas para alta disponibilidade
-  staleReplicaTimeout: "30" # Tempo limite para réplicas obsoletas (em minutos)
-  fromBackup: "" # (Opcional) Cria o volume a partir de um backup Longhorn
-allowVolumeExpansion: true # Permitir a expansão do volume
-reclaimPolicy: Retain # (Opcional) Política de retenção dos volumes: Retain ou Delete
-volumeBindingMode: WaitForFirstConsumer # (Opcional) Atrasar a criação do volume até que ele seja vinculado a um Pod
+  numberOfReplicas: "3" 
+  staleReplicaTimeout: "30" 
+  fromBackup: "" 
+  diskSelector: "longhorn" 
+  nodeSelector: "rrsrvworker" 
+allowVolumeExpansion: true
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
 
 
 # In case you're running Minikube you can comment the line above and use this one
