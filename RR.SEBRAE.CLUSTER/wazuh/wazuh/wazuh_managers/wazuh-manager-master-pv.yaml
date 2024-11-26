@@ -15,3 +15,12 @@ spec:
   volumeMode: Filesystem
   hostPath:   
     path: /data/wazuh-manager-master
+
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - rrsrvworker
