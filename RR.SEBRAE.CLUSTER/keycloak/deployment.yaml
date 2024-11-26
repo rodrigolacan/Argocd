@@ -18,7 +18,7 @@ spec:
       containers:
         - name: keycloak
           image: quay.io/keycloak/keycloak:26.0.6
-          args: ["start-dev"]
+          args: ["start", "--https-key-store-file=/etc/keycloak/certs/keycloak.jks", "--https-key-store-password=$(KC_KEYSTORE_PASSWORD)"]
           env:
             - name: KEYCLOAK_ADMIN
               value: "admin"
@@ -26,11 +26,42 @@ spec:
               value: "admin"
             - name: KC_PROXY
               value: "edge"
+            - name: KC_DB
+              value: "postgres"
+            - name: KC_DB_URL
+              value: "jdbc:postgresql://10.23.4.92:5432/keycloak-prod"
+            - name: KC_HOSTNAME
+              value: "10.23.6.22"
+            - name: KC_HOSTNAME_STRICT_HTTPS
+              value: "true"            
+            - name: KC_DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: keycloak-db-credentials
+                  key: username
+            - name: KC_DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: keycloak-db-credentials
+                  key: password
+            - name: KC_KEYSTORE_FILE
+              value: "/etc/keycloak/certs/keycloak.jks"
+            - name: KC_KEYSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: keycloak-https-cert
+                  key: password.txt
+          volumeMounts:
+              - name: keycloak-certs
+                mountPath: /etc/keycloak/certs
+                readOnly: true
+
           ports:
             - name: http
               containerPort: 8080
-          readinessProbe:
-            httpGet:
-              path: /realms/master
-              port: 8080
-      
+            - name: https
+              containerPort: 8443
+      volumes:
+        - name: keycloak-certs
+          secret:
+            secretName: keycloak-https-cert
