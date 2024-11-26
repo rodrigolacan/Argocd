@@ -18,7 +18,7 @@ spec:
       containers:
         - name: keycloak
           image: quay.io/keycloak/keycloak:26.0.6
-          args: ["start-dev"]
+          args: ["start", "--https-key-store-file=/etc/keycloak/certs/keycloak.jks", "--https-key-store-password=$(KC_KEYSTORE_PASSWORD)"]
           env:
             - name: KEYCLOAK_ADMIN
               value: "admin"
@@ -30,6 +30,10 @@ spec:
               value: "postgres"
             - name: KC_DB_URL
               value: "jdbc:postgresql://10.23.4.92:5432/keycloak-prod"
+            - name: KC_HOSTNAME
+              value: "[IP_DO_LOADBALANCER]"
+            - name: KC_HOSTNAME_STRICT_HTTPS
+              value: "true"            
             - name: KC_DB_USERNAME
               valueFrom:
                 secretKeyRef:
