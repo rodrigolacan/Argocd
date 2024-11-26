@@ -11,9 +11,15 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: wazuh-storage
+provisioner: driver.longhorn.io
+parameters:
+  numberOfReplicas: "3" # Número de réplicas para alta disponibilidade
+  staleReplicaTimeout: "30" # Tempo limite para réplicas obsoletas (em minutos)
+  fromBackup: "" # (Opcional) Cria o volume a partir de um backup Longhorn
+allowVolumeExpansion: true # Permitir a expansão do volume
+reclaimPolicy: Retain # (Opcional) Política de retenção dos volumes: Retain ou Delete
+volumeBindingMode: WaitForFirstConsumer # (Opcional) Atrasar a criação do volume até que ele seja vinculado a um Pod
 
-# Microk8s is our standard for local development
-provisioner: kubernetes.io/no-provisioner
 
 # In case you're running Minikube you can comment the line above and use this one
 # provisioner: k8s.io/minikube-hostpath
