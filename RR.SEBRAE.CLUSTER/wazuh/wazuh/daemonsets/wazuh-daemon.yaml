@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: wazuh-agent
-          image: kennyopennix/wazuh-agent:4.7.2
+          image: kennyopennix/wazuh-agent:latest
           securityContext:
             privileged: true
       env:
