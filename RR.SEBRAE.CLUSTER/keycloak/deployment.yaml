@@ -55,6 +55,9 @@ spec:
               - name: keycloak-certs
                 mountPath: /etc/keycloak/certs
                 readOnly: true
+              - name: keycloak-themes-volume
+                mountPath: /opt/keycloak/themes
+                readOnly: false
 
           ports:
             - name: http
