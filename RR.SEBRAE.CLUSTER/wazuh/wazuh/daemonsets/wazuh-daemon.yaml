@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: wazuh-agent
-  namespace: kube-system
+  namespace: wazuh
 spec:
   selector:
     matchLabels:
