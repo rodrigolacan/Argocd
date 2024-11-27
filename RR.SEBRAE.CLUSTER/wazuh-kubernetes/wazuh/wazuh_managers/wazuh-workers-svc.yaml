@@ -21,7 +21,8 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-        unique-worker: worker-1
+    app: wazuh-manager
+    node-type: worker
   ports:
     - name: agents-events
       port: 1514
