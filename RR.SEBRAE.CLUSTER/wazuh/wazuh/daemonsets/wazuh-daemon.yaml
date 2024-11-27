@@ -45,4 +45,4 @@ spec:
             - name: JOIN_MANAGER_API_PORT
               value: "55000"
             - name: JOIN_MANAGER_PORT
-              value: "1514"
+              value: "1516"
