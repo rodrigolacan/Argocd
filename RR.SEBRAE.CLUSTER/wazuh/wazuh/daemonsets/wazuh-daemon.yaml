@@ -23,7 +23,7 @@ spec:
             - name: JOIN_MANAGER_MASTER_HOST
               value: "wazuh-manager-master-0.wazuh-cluster.wazuh.svc.cluster.local"
             - name: JOIN_MANAGER_WORKER_HOST
-              value: "wazuh-manager-worker-0.wazuh-cluster.wazuh.svc.cluster.local"
+              value: "wazuh-manager-worker-1.wazuh-cluster.wazuh.svc.cluster.local"
             - name: JOIN_MANAGER_PROTOCOL
               value: "https"
             - name: WAZUH_GROUPS
@@ -45,4 +45,4 @@ spec:
             - name: JOIN_MANAGER_API_PORT
               value: "55000"
             - name: JOIN_MANAGER_PORT
-              value: "1516"
+              value: "1515"
