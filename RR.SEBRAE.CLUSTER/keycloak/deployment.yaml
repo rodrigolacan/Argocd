@@ -68,3 +68,6 @@ spec:
         - name: keycloak-certs
           secret:
             secretName: keycloak-https-cert
+        - name: keycloak-themes-volume
+          persistentVolumeClaim:
+            claimName: keycloak-themes-pvc 
