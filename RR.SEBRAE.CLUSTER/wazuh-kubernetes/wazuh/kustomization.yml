@@ -23,6 +23,8 @@ secretGenerator:
       - certs/indexer_cluster/admin-key.pem
       - certs/indexer_cluster/filebeat.pem
       - certs/indexer_cluster/filebeat-key.pem
+    options:
+      disableNameSuffixHash: true
   - name: dashboard-certs
     files:
       - certs/dashboard_http/cert.pem
@@ -36,10 +38,14 @@ configMapGenerator:
     files:
       - indexer_stack/wazuh-indexer/indexer_conf/opensearch.yml
       - indexer_stack/wazuh-indexer/indexer_conf/internal_users.yml
+    options:
+      disableNameSuffixHash: true
   - name: wazuh-conf
     files:
       - wazuh_managers/wazuh_conf/master.conf
       - wazuh_managers/wazuh_conf/worker.conf
+    options:
+      disableNameSuffixHash: true
   - name: dashboard-conf
     files:
       - indexer_stack/wazuh-dashboard/dashboard_conf/opensearch_dashboards.yml
