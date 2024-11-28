@@ -55,19 +55,11 @@ spec:
               - name: keycloak-certs
                 mountPath: /etc/keycloak/certs
                 readOnly: true
-              - name: keycloak-themes-volume
-                mountPath: /opt/keycloak/themes
-                readOnly: false
 
           ports:
-            - name: http
-              containerPort: 8080
             - name: https
               containerPort: 8443
       volumes:
         - name: keycloak-certs
           secret:
             secretName: keycloak-https-cert
-        - name: keycloak-themes-volume
-          persistentVolumeClaim:
-            claimName: keycloak-themes-pvc 
