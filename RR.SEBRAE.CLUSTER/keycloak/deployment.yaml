@@ -15,9 +15,11 @@ spec:
       labels:
         app: keycloak
     spec:
+      imagePullSecrets:
+        - name: harbor-secret
       containers:
         - name: keycloak
-          image: quay.io/keycloak/keycloak:26.0.6
+          image: harbor.rr.sebrae.com.br/keycloak/keycloak26:v1.0.0
           args: ["start", "--https-key-store-file=/etc/keycloak/certs/keycloak.jks", "--https-key-store-password=$(KC_KEYSTORE_PASSWORD)"]
           env:
             - name: KEYCLOAK_ADMIN
