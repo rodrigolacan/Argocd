@@ -25,6 +25,10 @@ spec:
             - --providers.kubernetesingress
             - --entryPoints.web.address=:80
             - --entryPoints.websecure.address=:443
+            - --entryPoints.websecure.http.tls=true
+            - --entryPoints.websecure.http.tls.certificatesResolvers.myresolver.acme.storage=/data/acme.json
+            - --entryPoints.websecure.http.tls.certificatesResolvers.myresolver.acme.httpChallenge.entryPoint=web
+
           ports:
             - name: web
               containerPort: 80
