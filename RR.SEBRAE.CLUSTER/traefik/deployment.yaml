@@ -21,8 +21,9 @@ spec:
         - name: traefik
           image: traefik:v3.2
           args:
+            - --api
             - --api.dashboard
-            - --api.insecure
+            - --api.insecure=true
             - --providers.kubernetesingress
             - --entrypoints.websecure.address=:443
             - --entrypoints.websecure.http.tls=true
