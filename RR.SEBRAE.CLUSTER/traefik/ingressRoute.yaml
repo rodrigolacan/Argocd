@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`traefik.rr.sebrae.com.br`)
+    - match: Host(`traefik-dashboard.rr.sebrae.com.br`)
       kind: Rule
       services:
         - name: traefik-dashboard-service
