@@ -23,7 +23,6 @@ spec:
             - --providers.kubernetesingress
             - --entryPoints.web.address=:80
             - --entryPoints.websecure.address=:443
-            - --providers.kubernetes.namespaces=traefik
           ports:
             - name: web
               containerPort: 80
