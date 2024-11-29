@@ -19,6 +19,8 @@ spec:
         - name: traefik
           image: traefik:v3.2
           args:
+            - --api
+            - --api.dashboard
             - --api.insecure
             - --providers.kubernetesingress
             - --entryPoints.web.address=:80
