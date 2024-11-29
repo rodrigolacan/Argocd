@@ -21,10 +21,13 @@ spec:
         - name: traefik
           image: traefik:v3.2
           args:
-            - --api.insecure
+            - --api.dashboard=true 
+            - --api.insecure=false
             - --providers.kubernetesingress
             - --entrypoints.websecure.address=:443
             - --entrypoints.websecure.http.tls=true
+            - --entrypoints.dashboard.http.tls=true
+            - --log.level=INFO
           ports:
             - name: web
               containerPort: 80
