@@ -18,5 +18,5 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: traefik-service
+              serviceName: traefik-dashboard-service
               servicePort: 80
