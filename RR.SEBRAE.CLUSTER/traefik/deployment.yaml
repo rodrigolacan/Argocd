@@ -23,7 +23,7 @@ spec:
           args:
             - --api
             - --api.dashboard
-            - --api.insecure=false
+            - --api.insecure=true
             - --providers.kubernetesingress
             - --entrypoints.websecure.address=:443
             - --entrypoints.websecure.http.tls=true
