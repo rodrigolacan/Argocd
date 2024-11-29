@@ -3,12 +3,8 @@ kind: Ingress
 metadata:
   name: traefik-dashboard-ingress
   namespace: traefik
-  annotations:
-    kubernetes.io/ingress.class: traefik
-    traefik.ingress.kubernetes.io/router.entrypoints: web, websecure
-    traefik.ingress.kubernetes.io/router.tls: "true"
-    traefik.ingress.kubernetes.io/router.middlewares: ingress-traefik-traefikbasicauth@kubernetescrd
 spec:
+  ingressClassName: traefik  # Substitua a anotação pela chave 'spec.ingressClassName'
   tls:
     - secretName: ssl-sebrae
 
@@ -17,6 +13,9 @@ spec:
       http:
         paths:
           - path: /
+            pathType: Prefix
             backend:
-              serviceName: traefik-dashboard-service
-              servicePort: 80
+              service:
+                name: traefik-dashboard-service
+                port:
+                  number: 80
