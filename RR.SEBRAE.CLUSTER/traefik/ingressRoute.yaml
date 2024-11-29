@@ -5,12 +5,12 @@ metadata:
   namespace: traefik
 spec:
   entryPoints:
-    - websecure
+  - web
   routes:
-    - match: Host(`traefik-dashboard.rr.sebrae.com.br`)
-      kind: Rule
-      services:
-        - name: traefik-dashboard-service
-          port: 80
+  - kind: Rule
+    match: Host(`domains.com`)
+    services:
+    - kind: TraefikService
+      name: api@internal
   tls:
     secretName: ssl-sebrae
