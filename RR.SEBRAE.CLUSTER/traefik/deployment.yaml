@@ -1,10 +1,9 @@
-kind: Deployment
 apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: traefik-deployment
   labels:
     app: traefik
-
 spec:
   replicas: 1
   selector:
@@ -22,10 +21,11 @@ spec:
           args:
             - --api.insecure
             - --providers.kubernetesingress
+            - --entryPoints.web.address=:80
             - --entryPoints.websecure.address=:443
             - --entryPoints.websecure.tls=true
             - --entryPoints.websecure.tls.certResolver=default
-            - --certificatesresolvers.default.acme.email=utic@rr.sebrae.com.br
+            - --certificatesresolvers.default.acme.email=seu-email@dominio.com
             - --certificatesresolvers.default.acme.storage=acme.json
             - --certificatesresolvers.default.acme.tlsChallenge=true
           ports:
