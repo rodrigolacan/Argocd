@@ -31,5 +31,15 @@ spec:
           ports:
             - name: web
               containerPort: 80
+            - name: websecure
+              containerPort: 443
             - name: dashboard
               containerPort: 8080
+          volumeMounts:
+            - name: ssl-secret
+              mountPath: /certs
+              readOnly: true
+      volumes:
+        - name: ssl-secret
+          secret:
+            secretName: ssl-sebrae
