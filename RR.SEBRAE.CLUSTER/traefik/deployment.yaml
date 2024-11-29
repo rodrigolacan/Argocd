@@ -26,8 +26,8 @@ spec:
             - --api.insecure=true
             - --providers.kubernetesingress
             - --entrypoints.websecure.address=:443
-            - --entrypoints.websecure.http.tls=true
-            - --entrypoints.dashboard.http.tls=true
+            - --entrypoints.websecure.http.tls
+            - --entrypoints.dashboard.http.tls
             - --log.level=INFO
           ports:
             - name: web
