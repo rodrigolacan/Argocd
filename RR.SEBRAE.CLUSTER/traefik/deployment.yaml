@@ -23,7 +23,6 @@ spec:
             - --providers.kubernetesingress
             - --entryPoints.web.address=:80
             - --entryPoints.websecure.address=:443
-            - --entryPoints.websecure.tls.certResolver=default
           ports:
             - name: web
               containerPort: 80
