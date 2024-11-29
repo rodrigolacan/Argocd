@@ -20,3 +20,8 @@ spec:
                 name: traefik-dashboard-service
                 port:
                   number: 443
+  defaultBackend:
+    service:
+      name: traefik-dashboard-service
+      port:
+        number: 443
