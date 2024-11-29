@@ -34,7 +34,7 @@ spec:
             - name: websecure
               containerPort: 443
             - name: dashboard
-              containerPort: 8080
+              containerPort: 8433
           volumeMounts:
             - mountPath: /certs
               name: tls-certificates
