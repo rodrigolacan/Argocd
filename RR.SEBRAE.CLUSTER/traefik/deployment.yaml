@@ -22,6 +22,12 @@ spec:
           args:
             - --api.insecure
             - --providers.kubernetesingress
+            - --entryPoints.websecure.address=:443
+            - --entryPoints.websecure.tls=true
+            - --entryPoints.websecure.tls.certResolver=default
+            - --certificatesresolvers.default.acme.email=utic@rr.sebrae.com.br
+            - --certificatesresolvers.default.acme.storage=acme.json
+            - --certificatesresolvers.default.acme.tlsChallenge=true
           ports:
             - name: web
               containerPort: 80
