@@ -2,7 +2,6 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: traefik-deployment
-  namespace: traefik
   labels:
     app: traefik
 
@@ -21,26 +20,10 @@ spec:
         - name: traefik
           image: traefik:v3.2
           args:
-            - --api
-            - --api.dashboard
             - --api.insecure
             - --providers.kubernetesingress
-            - --entrypoints.websecure.address=:443
-            - --entrypoints.websecure.http.tls
-            - --entrypoints.dashboard.http.tls
-            - --log.level=INFO
           ports:
             - name: web
               containerPort: 80
-            - name: websecure
-              containerPort: 443
             - name: dashboard
               containerPort: 8080
-          volumeMounts:
-            - mountPath: /certs
-              name: tls-certificates
-              readOnly: true
-      volumes:
-        - name: tls-certificates
-          secret:
-            secretName: ssl-sebrae 
