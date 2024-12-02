@@ -13,4 +13,4 @@ spec:
           service:
             name: traefik-dashboard-service
             port:
-              name: 8080
+              name: dashboard
