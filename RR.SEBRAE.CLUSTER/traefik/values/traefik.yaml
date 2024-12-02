@@ -1,5 +1,3 @@
 providers:
   kubernetesCRD:
     allowCrossNamespace: true
-    certAuthFilePath: "/certificates/ca.crt"
-    endpoint: "http://localhost:8080"  # Por exemplo, o endpoint do servidor Kubernetes
