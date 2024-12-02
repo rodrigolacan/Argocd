@@ -5,12 +5,13 @@ metadata:
   namespace: traefik
 spec:
   rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: whoami
-            port:
-              name: web
+    - host: traefik-dashboard.rr.sebrae.com.br  # Substitua pelo domínio correto
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: whoami
+                port:
+                  name: web
