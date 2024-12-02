@@ -3,18 +3,3 @@ entryPoints:
     address: ":80"
   websecure:
     address: ":443"
-    http:
-      tls:
-        certResolver: default
-        certificates:
-          - certFile: /etc/traefik/certificates/cert.crt
-            keyFile: /etc/traefik/certificates/cert.key
-
-providers:
-  kubernetesCRD:
-    allowCrossNamespace: true
-
-volumes:
-  - name: certificates
-    secret:
-      secretName: ssl-sebrae
