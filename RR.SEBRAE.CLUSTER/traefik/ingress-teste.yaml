@@ -11,6 +11,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: traefik-dashboard-service
+            name: whoami
             port:
-              name: dashboard
+              name: web
