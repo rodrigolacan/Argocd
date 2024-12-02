@@ -25,3 +25,18 @@ spec:
       port: 80
   selector:
     app: traefik
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: traefik
+  name: traefik-websecure-service
+
+spec:
+  type: LoadBalancer
+  ports:
+    - targetPort: websecure
+      port: 443
+  selector:
+    app: traefik
