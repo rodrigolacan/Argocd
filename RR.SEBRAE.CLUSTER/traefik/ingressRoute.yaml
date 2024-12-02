@@ -10,7 +10,7 @@ spec:
   - kind: Rule
     match: Host(`traefik-dashboard.rr.sebrae.com.br`)
     services:
-    - kind: TraefikService
-      name: api@internal
+        - name: traefik-dashboard-service
+          port: 80
   tls:
     secretName: ssl-sebrae
