@@ -2,17 +2,17 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: whoami-ingress
-  namespace: traefik
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: websecure  # Define o entryPoint como "web"
+
 spec:
   rules:
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: whoami
-                port:
-                  name: web
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: whoami
+            port:
+              name: web
