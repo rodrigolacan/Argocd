@@ -4,7 +4,7 @@ metadata:
   name: whoami-ingress
   namespace: traefik
   annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: websecure  # Define o entryPoint como "web"
+    traefik.ingress.kubernetes.io/router.entrypoints: web # Define o entryPoint como "web"
 
 spec:
   rules:
