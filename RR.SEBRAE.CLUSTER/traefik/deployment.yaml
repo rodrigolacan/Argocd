@@ -26,8 +26,6 @@ spec:
             - --entryPoints.web.address=:80
             - --entryPoints.websecure.address=:443
             - --entryPoints.websecure.http.tls=true
-            - --entryPoints.websecure.http.tls.certificates[0].certFile=/certs/tls.crt
-            - --entryPoints.websecure.http.tls.certificates[0].keyFile=/certs/tls.key
 
           ports:
             - name: web
