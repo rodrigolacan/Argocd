@@ -29,3 +29,13 @@ spec:
               containerPort: 80
             - name: dashboard
               containerPort: 8080
+            - name: websecure
+              containerPort: 443
+          volumeMounts:
+            - name: certificates
+              mountPath: /etc/traefik/certificates
+              readOnly: true
+      volumes:
+        - name: certificates
+          secret:
+            secretName: ssl-sebrae
