@@ -5,17 +5,12 @@ metadata:
   namespace: traefik
 spec:
   rules:
-    - host: traefik-dashboard.rr.sebrae.com.br  # Substitua pelo domínio correto
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: whoami
-                port:
-                  name: web
-  tls:
-    - hosts:
-        - traefik-dashboard.rr.sebrae.com.br  # Substitua pelo domínio correto
-      secretName: ssl-sebrae  # Nome do Secret TLS
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: whoami
+            port:
+              name: web
