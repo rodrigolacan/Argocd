@@ -23,6 +23,7 @@ spec:
           args:
             - --api.insecure
             - --providers.kubernetesingress
+            - --configFile=values/traefik.yaml
           ports:
             - name: web
               containerPort: 80
