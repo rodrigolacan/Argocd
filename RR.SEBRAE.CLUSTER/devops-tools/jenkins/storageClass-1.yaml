@@ -10,7 +10,7 @@ parameters:
   diskSelector: "longhorn"
   nodeSelector: "rrsrvworker"
   longhorn.io/snapshot-max-count: "1"
-  longhorn.io/snapshot-max-size: "1Gi"
+  longhorn.io/snapshot-max-size: "5Gi"
 allowVolumeExpansion: true
 reclaimPolicy: Retain
 volumeBindingMode: WaitForFirstConsumer
