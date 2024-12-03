@@ -6,6 +6,6 @@ metadata:
 spec:
   service_type: LoadBalancer
   loadbalancer_ip: '10.23.6.24'
-  loadbalancer_protocol: http
-  loadbalancer_port: 80
+  loadbalancer_protocol: https
+  loadbalancer_port: 443
   postgres_configuration_secret: secret-pgsql
