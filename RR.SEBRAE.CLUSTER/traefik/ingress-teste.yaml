@@ -13,4 +13,4 @@ spec:
         - name: api@internal                     # Serviço interno para o dashboard
           kind: TraefikService
   tls:
-    secretName: ssl-sebrae-cas                   # Nome do Secret com os certificados
+    secretName: ssl-sebrae                  # Nome do Secret com os certificados
