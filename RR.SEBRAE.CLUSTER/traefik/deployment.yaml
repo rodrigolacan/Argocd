@@ -1,11 +1,10 @@
-kind: Deployment
 apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: traefik-deployment
   namespace: traefik
   labels:
     app: traefik
-
 spec:
   replicas: 1
   selector:
@@ -21,19 +20,20 @@ spec:
         - name: traefik
           image: traefik:v3.2
           args:
-            - --api.insecure
-            - --providers.kubernetesingress
-            - --entryPoints.web.address=:80
-            - --entryPoints.websecure.address=:443
-            - --entryPoints.web.proxyProtocol.insecure
-            - --providers.kubernetescrd.certauthfilepath=/certs/ca.crt
+            - --api.dashboard=true                   # Habilita o dashboard
+            - --api.insecure=false                   # Desabilita acesso inseguro ao dashboard
+            - --providers.kubernetesingress          # Habilita suporte a Ingress
+            - --providers.kubernetescrd              # Habilita suporte a IngressRoute (recomendado)
+            - --entryPoints.web.address=:80          # Define entrypoint para HTTP
+            - --entryPoints.websecure.address=:443   # Define entrypoint para HTTPS
+            - --entryPoints.websecure.http.tls=true  # Habilita TLS no entrypoint websecure
           ports:
             - name: web
               containerPort: 80
-            - name: dashboard
-              containerPort: 8080
             - name: websecure
               containerPort: 443
+            - name: dashboard
+              containerPort: 8080
           volumeMounts:
             - name: certs-volume
               mountPath: /certs
@@ -41,4 +41,4 @@ spec:
       volumes:
         - name: certs-volume
           secret:
-            secretName: ssl-sebrae
+            secretName: ssl-sebrae-cas              # Secret com o certificado para HTTPS
