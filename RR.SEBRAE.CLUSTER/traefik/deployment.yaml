@@ -27,6 +27,12 @@ spec:
             - --entryPoints.web.address=:80          # Define entrypoint para HTTP
             - --entryPoints.websecure.address=:443   # Define entrypoint para HTTPS
             - --entryPoints.websecure.http.tls=true  # Habilita TLS no entrypoint websecure
+            - --log.level=DEBUG                         # Define o nível de log (DEBUG, INFO, WARN, ERROR)
+            - --log.format=json                         # Formato dos logs (json ou common)
+            - --accesslog=true                          # Habilita logs de acesso
+            - --accesslog.filepath=/path/to/logfile     # Define onde salvar os logs de acesso
+            - --accesslog.fields.defaultmode=keep       # Ajusta os campos do log
+
           ports:
             - name: web
               containerPort: 80
