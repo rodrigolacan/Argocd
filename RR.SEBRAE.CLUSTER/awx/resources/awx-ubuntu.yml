@@ -9,3 +9,4 @@ spec:
   loadbalancer_protocol: https
   loadbalancer_port: 443
   postgres_configuration_secret: secret-pgsql
+  bundle_cacert_secret: ssl-sebrae-custom-certs
