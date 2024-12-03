@@ -45,7 +45,7 @@ spec:
       volumes:
         - name: jenkins-data
           persistentVolumeClaim:
-            claimName: jenkins-pv-claim
+            claimName: jenkins-pvc
         - name: jenkins-tls
           secret:
             secretName: ssl-sebrae
