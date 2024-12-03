@@ -1,0 +1,16 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: jenkins-storage
+provisioner: driver.longhorn.io
+parameters:
+  numberOfReplicas: "1"
+  staleReplicaTimeout: "30"
+  fromBackup: ""
+  diskSelector: "longhorn"
+  nodeSelector: "rrsrvworker"
+  longhorn.io/snapshot-max-count: "1"
+  longhorn.io/snapshot-max-size: "1Gi"
+allowVolumeExpansion: true
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
