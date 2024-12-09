@@ -19,7 +19,7 @@ spec:
         - name: harbor-secret
       containers:
         - name: keycloak
-          image: harbor.rr.sebrae.com.br/keycloak-homolog/keycloak26:v1.0.1
+          image: harbor.rr.sebrae.com.br/keycloak-homolog/keycloak26:v1.0.3
           args: ["start", "--https-key-store-file=/etc/keycloak/certs/keycloak.jks", "--https-key-store-password=$(KC_KEYSTORE_PASSWORD)"]
           env:
             - name: KEYCLOAK_ADMIN
