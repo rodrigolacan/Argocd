@@ -17,7 +17,9 @@ spec:
         - name: harbor-secret
       containers:
         - name: wildfly-apisebrae
-          image: harbor.rr.sebrae.com.br/wildfly/wildfly:v1.0.8
+          image: harbor.rr.sebrae.com.br/wildfly/wildfly:v1.0.9
           ports:
             - containerPort: 8080
+            - containerPort: 8443
+            - containerPort: 9443
             - containerPort: 9990
