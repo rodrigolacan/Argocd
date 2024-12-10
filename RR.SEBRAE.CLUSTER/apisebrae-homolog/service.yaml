@@ -11,6 +11,12 @@ spec:
     - name: http
       port: 80
       targetPort: 8080
+    - name: https
+      port: 443
+      targetPort: 8443
     - name: admin
       port: 9990
       targetPort: 9990
+    - name: admin-https
+      port: 9993
+      targetPort: 9993
