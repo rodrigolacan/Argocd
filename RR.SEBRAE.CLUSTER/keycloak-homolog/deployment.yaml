@@ -26,8 +26,6 @@ spec:
               value: "admin"
             - name: KEYCLOAK_ADMIN_PASSWORD
               value: "admin"
-            - name: KC_HOSTNAME_DEFAULT_REALM
-              value: "sebrae-corporate-homolog" 
             - name: KC_PROXY
               value: "edge"
             - name: KC_DB
