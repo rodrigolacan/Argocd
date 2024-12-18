@@ -4,7 +4,7 @@ metadata:
   name: consulta-jucerr-service
   namespace: consulta-jucerr-homolog
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: consulta-jucerr
   ports:
