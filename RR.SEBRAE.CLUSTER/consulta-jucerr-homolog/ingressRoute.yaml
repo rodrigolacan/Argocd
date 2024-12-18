@@ -14,5 +14,6 @@ spec:
           kind: Service
           namespace: consulta-jucerr-homolog
           port: 443
+          scheme: https
   tls:
     secretName: ssl-sebrae
