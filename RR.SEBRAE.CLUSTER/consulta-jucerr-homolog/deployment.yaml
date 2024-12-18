@@ -23,5 +23,18 @@ spec:
             - containerPort: 443
           env:
             - name: SCRIPT_NAME
-              value: script.sh
-
+              value: script-ssl.sh
+          volumeMounts:
+            - name: tls-secret
+              mountPath: /etc/ssl/certs
+              readOnly: true
+            - name: laravel-env-volume
+              mountPath: /var/www/html/.env
+              subPath: .env
+      volumes:
+        - name: tls-secret
+          secret:
+            secretName: ssl-sebrae
+        - name: laravel-env-volume
+          configMap:
+            name: laravel-staging-env
