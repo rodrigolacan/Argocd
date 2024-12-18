@@ -13,5 +13,6 @@ spec:
         - name: consulta-jucerr-service
           kind: Service
           namespace: consulta-jucerr-homolog
+          port: 443
   tls:
     secretName: ssl-sebrae
