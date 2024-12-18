@@ -17,21 +17,14 @@ spec:
         - name: harbor-secret
       containers:
         - name: consulta-jucerr
-          image: harbor.rr.sebrae.com.br/consulta-juce-rr-homolog/consulta-juce-rr:v1.0.1
+          image: harbor.rr.sebrae.com.br/consulta-juce-rr-homolog/consulta-juce-rr:v1.0.2
           ports:
             - containerPort: 80
-            - containerPort: 443
           volumeMounts:
-            - name: tls-secret
-              mountPath: /etc/ssl/certs
-              readOnly: true
             - name: laravel-env-volume
               mountPath: /var/www/html/.env
               subPath: .env
       volumes:
-        - name: tls-secret
-          secret:
-            secretName: ssl-sebrae
         - name: laravel-env-volume
           configMap:
             name: laravel-staging-env
