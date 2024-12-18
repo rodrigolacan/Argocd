@@ -17,13 +17,10 @@ spec:
         - name: harbor-secret
       containers:
         - name: consulta-jucerr
-          image: harbor.rr.sebrae.com.br/consulta-juce-rr-homolog/consulta-juce-rr:v1.0.0
+          image: harbor.rr.sebrae.com.br/consulta-juce-rr-homolog/consulta-juce-rr:v1.0.1
           ports:
             - containerPort: 80
             - containerPort: 443
-          env:
-            - name: SCRIPT_NAME
-              value: script-ssl.sh
           volumeMounts:
             - name: tls-secret
               mountPath: /etc/ssl/certs
