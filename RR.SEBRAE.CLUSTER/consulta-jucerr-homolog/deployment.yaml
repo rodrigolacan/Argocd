@@ -16,8 +16,8 @@ spec:
       imagePullSecrets:
         - name: harbor-secret
       containers:
-        - name: apache-facilita
-          image: harbor.rr.sebrae.com.br/consulta-jucerr-homolog/consulta-juce-rr:v1.1.0
+        - name: consulta-jucerr
+          image: harbor.rr.sebrae.com.br/consulta-jucerr-homolog/consulta-juce-rr:v2.0.0
           ports:
             - containerPort: 80
             - containerPort: 443
