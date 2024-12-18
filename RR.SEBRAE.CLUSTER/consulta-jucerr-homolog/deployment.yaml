@@ -23,7 +23,7 @@ spec:
             - containerPort: 443
           env:
             - name: SCRIPT_NAME
-              value: script-ssl.sh
+              value: script.sh
           volumeMounts:
             - name: tls-secret
               mountPath: /etc/ssl/certs
