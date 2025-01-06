@@ -15,5 +15,7 @@ spec:
           namespace: consulta-jucerr-homolog
           port: 80
           scheme: http
+      middlewares:
+        - name: forwarded-headers
   tls:
     secretName: ssl-sebrae
