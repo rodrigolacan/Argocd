@@ -41,7 +41,7 @@ data:
     SESSION_LIFETIME=120
     SESSION_ENCRYPT=false
     SESSION_PATH=/
-    SESSION_DOMAIN=.rr.sebrae.com.br
+    SESSION_DOMAIN=consulta-jucerr-homolog.rr.sebrae.com.br
     SESSION_SECURE_COOKIE=true
 
     BROADCAST_CONNECTION=log
