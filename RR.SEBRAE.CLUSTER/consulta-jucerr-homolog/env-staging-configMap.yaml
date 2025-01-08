@@ -43,6 +43,7 @@ data:
     SESSION_PATH=/
     SESSION_DOMAIN=consulta-jucerr-homolog.rr.sebrae.com.br
     SESSION_SECURE_COOKIE=true
+    SESSION_SAME_SITE=lax
 
     BROADCAST_CONNECTION=log
     FILESYSTEM_DISK=local
