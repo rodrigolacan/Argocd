@@ -79,7 +79,7 @@ data:
     SECRET_ACCESS_KEY="uVdd7NOtdXsJJjVNis5fg6faJ4IOWCXRTMD9wTQy"
     KEYCLOAK_CLIENT_ID=consulta-jucerr
 
-    KEYCLOAK_CLIENT_SECRET='LcQ5Mnh2X8nTXELFENpeFLo7L4d3AJjp'
-    KEYCLOAK_REDIRECT_URL='https://consulta-jucerr-homolog.rr.sebrae.com.br/callback/keycloak'
-    KEYCLOAK_BASE_URL='https://lus-homolog.rr.sebrae.com.br'
-    KEYCLOAK_REALM='sebrae-corporate-homolog'
+    KEYCLOAK_CLIENT_SECRET=LcQ5Mnh2X8nTXELFENpeFLo7L4d3AJjp
+    KEYCLOAK_REDIRECT_URL=https://consulta-jucerr-homolog.rr.sebrae.com.br/callback
+    KEYCLOAK_BASE_URL=https://lus-homolog.rr.sebrae.com.br
+    KEYCLOAK_REALM=sebrae-corporate-homolog
