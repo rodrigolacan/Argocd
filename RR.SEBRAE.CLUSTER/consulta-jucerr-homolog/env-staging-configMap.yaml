@@ -29,14 +29,6 @@ data:
     LOG_DEPRECATIONS_CHANNEL=null
     LOG_LEVEL=debug
 
-    DB_CONNECTION=null
-    # DB_HOST=127.0.0.1
-    # DB_PORT=3306
-    # DB_DATABASE=consulta_juntacomercial
-    # DB_USERNAME=root
-    # DB_PASSWORD=
-    #DB_DATABASE=/home/akyama/Documentos/consulta-juntacomercial/database/database.sqlite
-
     SESSION_DRIVER=database
     SESSION_LIFETIME=120
     SESSION_ENCRYPT=false
