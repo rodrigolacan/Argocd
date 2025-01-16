@@ -6,8 +6,8 @@ metadata:
 data:
   .env: |
     #ConfigMap
-    APP_NAME=Laravel
-    APP_ENV=staging
+    PP_NAME=Laravel
+    APP_ENV=local
     APP_KEY=base64:8qyPdr6o6cAnoLd3GiT42MbbzgGbefT4WLQxSpBfjdQ=
     APP_DEBUG=true
     APP_TIMEZONE=America/Boa_Vista
@@ -17,7 +17,7 @@ data:
     APP_FALLBACK_LOCALE=en
     APP_FAKER_LOCALE=en_US
 
-    APP_MAINTENANCE_DRIVER=redis
+    APP_MAINTENANCE_DRIVER=file
     # APP_MAINTENANCE_STORE=database
 
     PHP_CLI_SERVER_WORKERS=4
@@ -35,28 +35,35 @@ data:
     # DB_DATABASE=consulta_juntacomercial
     # DB_USERNAME=root
     # DB_PASSWORD=
-    # DB_DATABASE=
+    #DB_DATABASE=/home/akyama/Documentos/consulta-juntacomercial/database/database.sqlite
 
-    SESSION_DRIVER=redis
+    SESSION_DRIVER=database
     SESSION_LIFETIME=120
     SESSION_ENCRYPT=false
     SESSION_PATH=/
     SESSION_DOMAIN=consulta-jucerr-homolog.rr.sebrae.com.br
-    SESSION_SECURE_COOKIE=true
     SESSION_SAME_SITE=lax
 
     BROADCAST_CONNECTION=log
     FILESYSTEM_DISK=local
-    QUEUE_CONNECTION=sync
+    QUEUE_CONNECTION=file
 
-    CACHE_STORE=redis
+    CACHE_STORE=database
+    CACHE_DRIVER=database
 
     MEMCACHED_HOST=127.0.0.1
 
-    REDIS_CLIENT=predis
-    REDIS_HOST=10.23.6.29
-    REDIS_PASSWORD=null
-    REDIS_PORT=6379
+    #REDIS_CLIENT=predis
+    #REDIS_HOST=10.23.6.29
+    #REDIS_PASSWORD=null
+    #REDIS_PORT=6379
+
+    DB_CONNECTION=pgsql
+    DB_HOST=10.23.4.92
+    DB_PORT=5432
+    DB_DATABASE=test
+    DB_USERNAME=teste
+    DB_PASSWORD='WaNeB#T1%Sc'
 
     MAIL_MAILER=log
     MAIL_HOST=127.0.0.1
@@ -77,9 +84,9 @@ data:
 
     ACCESS_KEY_ID="RRD888LV0UDLW2KLGYKJ"
     SECRET_ACCESS_KEY="uVdd7NOtdXsJJjVNis5fg6faJ4IOWCXRTMD9wTQy"
-    KEYCLOAK_CLIENT_ID=consulta-jucerr
 
+    KEYCLOAK_CLIENT_ID=consulta-jucerr
     KEYCLOAK_CLIENT_SECRET=LcQ5Mnh2X8nTXELFENpeFLo7L4d3AJjp
     KEYCLOAK_REDIRECT_URI=https://consulta-jucerr-homolog.rr.sebrae.com.br/callback
-    KEYCLOAK_BASE_URL=https://lus-homolog.rr.sebrae.com.br
+    KEYCLOAK_BASE_URL=https://lus-homolog.rr.sebrae.com.br/
     KEYCLOAK_REALM=sebrae-corporate-homolog
