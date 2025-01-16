@@ -29,19 +29,19 @@ data:
     LOG_DEPRECATIONS_CHANNEL=null
     LOG_LEVEL=debug
 
-    SESSION_DRIVER=database
+    SESSION_DRIVER=file
     SESSION_LIFETIME=120
     SESSION_ENCRYPT=false
     SESSION_PATH=/
-    SESSION_DOMAIN=consulta-jucerr-homolog.rr.sebrae.com.br
+    SESSION_DOMAIN=.rr.sebrae.com.br
     SESSION_SAME_SITE=lax
 
     BROADCAST_CONNECTION=log
     FILESYSTEM_DISK=local
     QUEUE_CONNECTION=file
 
-    CACHE_STORE=database
-    CACHE_DRIVER=database
+    CACHE_STORE=file
+    #CACHE_DRIVER=database
 
     MEMCACHED_HOST=127.0.0.1
 
@@ -50,12 +50,12 @@ data:
     #REDIS_PASSWORD=null
     #REDIS_PORT=6379
 
-    DB_CONNECTION=pgsql
-    DB_HOST=10.23.4.92
-    DB_PORT=5432
-    DB_DATABASE=test
-    DB_USERNAME=teste
-    DB_PASSWORD='WaNeB#T1%Sc'
+    #DB_CONNECTION=pgsql
+    #DB_HOST=10.23.4.92
+    #DB_PORT=5432
+    #DB_DATABASE=test
+    #DB_USERNAME=teste
+    #DB_PASSWORD='WaNeB#T1%Sc'
 
     MAIL_MAILER=log
     MAIL_HOST=127.0.0.1
