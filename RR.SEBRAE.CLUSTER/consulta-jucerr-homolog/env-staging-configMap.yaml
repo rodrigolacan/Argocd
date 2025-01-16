@@ -53,8 +53,8 @@ data:
 
     MEMCACHED_HOST=127.0.0.1
 
-    REDIS_CLIENT=phpredis
-    REDIS_HOST=127.0.0.1
+    REDIS_CLIENT=predis
+    REDIS_HOST=10.23.6.29
     REDIS_PASSWORD=null
     REDIS_PORT=6379
 
