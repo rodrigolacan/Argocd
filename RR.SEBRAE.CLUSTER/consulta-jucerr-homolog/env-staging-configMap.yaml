@@ -5,8 +5,7 @@ metadata:
   namespace: consulta-jucerr-homolog
 data:
   .env: |
-    #ConfigMap
-    PP_NAME=Laravel
+    APP_NAME=Laravel
     APP_ENV=local
     APP_KEY=base64:8qyPdr6o6cAnoLd3GiT42MbbzgGbefT4WLQxSpBfjdQ=
     APP_DEBUG=true
@@ -29,11 +28,11 @@ data:
     LOG_DEPRECATIONS_CHANNEL=null
     LOG_LEVEL=debug
 
-    SESSION_DRIVER=file
+    SESSION_DRIVER=database
     SESSION_LIFETIME=120
     SESSION_ENCRYPT=false
     SESSION_PATH=/
-    SESSION_DOMAIN=.rr.sebrae.com.br
+    SESSION_DOMAIN=consulta-jucerr-homolog.rr.sebrae.com.br
     SESSION_SAME_SITE=lax
 
     BROADCAST_CONNECTION=log
