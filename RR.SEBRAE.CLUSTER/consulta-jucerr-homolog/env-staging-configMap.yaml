@@ -6,7 +6,7 @@ metadata:
 data:
   .env: |
     APP_NAME=Laravel
-    APP_ENV=local
+    APP_ENV=production
     APP_KEY=base64:8qyPdr6o6cAnoLd3GiT42MbbzgGbefT4WLQxSpBfjdQ=
     APP_DEBUG=true
     APP_TIMEZONE=America/Boa_Vista
