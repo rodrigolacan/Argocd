@@ -1,8 +1,8 @@
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
-  name: consulta-jucerr-ingressroute
-  namespace: consulta-jucerr-homolog
+  name: sistema-avaliacao-ingressroute
+  namespace: sistema-avaliacao-homolog
 spec:
   entryPoints:
     - websecure                                  
