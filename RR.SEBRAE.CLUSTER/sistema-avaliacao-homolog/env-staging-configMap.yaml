@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: laravel-staging-env
-  namespace: sistema-avaliaca-homolog
+  namespace: sistema-avaliacao-homolog
 data:
   .env: |
     APP_NAME=Laravel
