@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sistema-avaliacao
+  namespace: sistema-avaliacao-homolog
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sistema-avaliacao
+  template:
+    metadata:
+      labels:
+        app: sistema-avaliacao
+    spec:
+      imagePullSecrets:
+        - name: harbor-secret
+      containers:
+        - name: sistema-avaliacao
+          image: harbor.rr.sebrae.com.br/sistema-avaliacao-homolog/sistema-avaliacao:v1.0.0
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: laravel-env-volume
+              mountPath: /var/www/html/.env
+              subPath: .env
+      volumes:
+        - name: laravel-env-volume
+          configMap:
+            name: laravel-staging-env
