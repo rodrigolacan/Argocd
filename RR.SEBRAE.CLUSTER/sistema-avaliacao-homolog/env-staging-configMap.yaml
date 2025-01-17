@@ -6,7 +6,7 @@ metadata:
 data:
   .env: |
     APP_NAME=Laravel
-    APP_ENV=stagging
+    APP_ENV=local
     APP_KEY=base64:gMbWZLbHxM2cfFGj89tpq785pPTVD/puZFF8gXSu0GA=
     APP_DEBUG=true
     APP_TIMEZONE=UTC
