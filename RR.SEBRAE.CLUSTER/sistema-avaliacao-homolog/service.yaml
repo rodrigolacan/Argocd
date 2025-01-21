@@ -4,7 +4,7 @@ metadata:
   name: sistema-avaliacao-service
   namespace: sistema-avaliacao-homolog
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: sistema-avaliacao
   ports:
