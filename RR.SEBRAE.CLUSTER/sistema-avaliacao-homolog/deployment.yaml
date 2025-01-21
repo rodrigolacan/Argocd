@@ -20,7 +20,16 @@ spec:
           image: harbor.rr.sebrae.com.br/sistema-avaliacao-homolog/sistema-avaliacao:v1.0.3
           ports:
             - containerPort: 80
+            - containerPort: 443
+          env:
+            - name: SCRIPT_NAME
+              value: script-ssl.sh
+            - name: SERVER_NAME
+              value: avaliacao-homolog.rr.sebrae.com.br
           volumeMounts:
+            - name: tls-secret
+              mountPath: /etc/ssl/certs
+              readOnly: true
             - name: laravel-env-volume
               mountPath: /var/www/html/.env
               subPath: .env
@@ -28,3 +37,6 @@ spec:
         - name: laravel-env-volume
           configMap:
             name: laravel-staging-env
+        - name: tls-secret
+          secret:
+            secretName: ssl-sebrae
