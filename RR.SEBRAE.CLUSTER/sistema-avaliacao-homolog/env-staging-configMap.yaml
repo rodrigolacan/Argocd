@@ -10,7 +10,7 @@ data:
     APP_KEY=base64:gMbWZLbHxM2cfFGj89tpq785pPTVD/puZFF8gXSu0GA=
     APP_DEBUG=true
     APP_TIMEZONE=UTC
-    APP_URL=http://localhost
+    APP_URL=https://avaliacao-homolog.rr.sebrae.com.br
 
     APP_LOCALE=pt
     APP_FALLBACK_LOCALE=pt
