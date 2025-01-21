@@ -17,15 +17,13 @@ spec:
         - name: harbor-secret
       containers:
         - name: sistema-avaliacao
-          image: harbor.rr.sebrae.com.br/sistema-avaliacao-homolog/sistema-avaliacao:v1.0.6
+          image: harbor.rr.sebrae.com.br/sistema-avaliacao-homolog/sistema-avaliacao:v1.0.7
           ports:
             - containerPort: 80
             - containerPort: 443
           env:
             - name: SCRIPT_NAME
               value: script-ssl.sh
-            - name: SERVER_NAME
-              value: avaliacao-homolog.rr.sebrae.com.br
           volumeMounts:
             - name: tls-secret
               mountPath: /etc/ssl/certs
