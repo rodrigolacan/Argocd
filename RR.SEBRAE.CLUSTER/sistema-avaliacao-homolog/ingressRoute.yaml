@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - websecure                                  
   routes:
-    - match: Host(`sistemavaliacao-homolog.rr.sebrae.com.br`)
+    - match: Host(`avaliacao-homolog.rr.sebrae.com.br`)
       kind: Rule
       services:
         - name: sistema-avaliacao-service
