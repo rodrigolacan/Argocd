@@ -78,6 +78,6 @@ data:
 
     KEYCLOAK_CLIENT_ID=consulta-jucerr
     KEYCLOAK_CLIENT_SECRET=LcQ5Mnh2X8nTXELFENpeFLo7L4d3AJjp
-    KEYCLOAK_REDIRECT_URI=https://consulta-jucerr-homolog/callback
+    KEYCLOAK_REDIRECT_URI=https://consulta-jucerr-homolog.rr.sebrae.com.br/callback
     KEYCLOAK_BASE_URL=https://lus-homolog.rr.sebrae.com.br/
     KEYCLOAK_REALM=sebrae-corporate-homolog
