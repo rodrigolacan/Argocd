@@ -20,6 +20,10 @@ spec:
           image: harbor.rr.sebrae.com.br/consulta-juce-rr-homolog/consulta-juce-rr:v1.2.90
           ports:
             - containerPort: 80
+            - containerPort: 443
+          env:
+            - name: SCRIPT_NAME
+              value: script-ssl.sh
           volumeMounts:
             - name: laravel-env-volume
               mountPath: /var/www/html/.env
