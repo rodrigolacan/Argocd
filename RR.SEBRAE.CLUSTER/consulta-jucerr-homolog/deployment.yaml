@@ -17,7 +17,7 @@ spec:
         - name: harbor-secret
       containers:
         - name: consulta-jucerr
-          image: harbor.rr.sebrae.com.br/consulta-juce-rr-homolog/consulta-juce-rr:v1.2.109
+          image: harbor.rr.sebrae.com.br/consulta-juce-rr-homolog/consulta-juce-rr:v1.2.110
           ports:
             - containerPort: 80
             - containerPort: 443
