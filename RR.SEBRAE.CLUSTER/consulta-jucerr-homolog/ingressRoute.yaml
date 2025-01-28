@@ -1,0 +1,19 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: consulta-jucerr-ingressroute
+  namespace: consulta-jucerr-homolog
+spec:
+  entryPoints:
+    - websecure                                  
+  routes:
+    - match: Host(`consulta-jucerr-homolog.rr.sebrae.com.br`)
+      kind: Rule
+      services:
+        - name: consulta-jucerr-service
+          kind: Service
+          namespace: consulta-jucerr-homolog
+          port: 80
+          scheme: http
+  tls:
+    secretName: ssl-sebrae
