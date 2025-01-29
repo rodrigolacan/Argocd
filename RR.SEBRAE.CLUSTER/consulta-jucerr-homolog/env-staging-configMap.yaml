@@ -49,12 +49,12 @@ data:
     #REDIS_PASSWORD=null
     #REDIS_PORT=6379
 
-    DB_CONNECTION=sqlite
-    # DB_HOST=10.23.4.92
-    # DB_PORT=5432
-    DB_DATABASE=/var/www/html/database/database.sqlite
-    # DB_USERNAME=consulta.jucerr
-    # DB_PASSWORD='Ni1fY64oW#u='
+    DB_CONNECTION=pgsql
+    DB_HOST=10.23.4.92
+    DB_PORT=5432
+    DB_DATABASE=tatu
+    DB_USERNAME=consulta.jucerr
+    DB_PASSWORD='Ni1fY64oW#u='
 
     MAIL_MAILER=log
     MAIL_HOST=127.0.0.1
