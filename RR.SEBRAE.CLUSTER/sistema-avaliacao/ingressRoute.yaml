@@ -12,7 +12,7 @@ spec:
       services:
         - name: sistema-avaliacao-service
           kind: Service
-          namespace: sistema-avaliacao-homolog
+          namespace: sistema-avaliacao
           port: 80
           scheme: http
   tls:
