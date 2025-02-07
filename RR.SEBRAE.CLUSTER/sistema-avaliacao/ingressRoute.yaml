@@ -1,0 +1,19 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: sistema-avaliacao-ingressroute
+  namespace: sistema-avaliacao
+spec:
+  entryPoints:
+    - websecure                                  
+  routes:
+    - match: Host(`avaliacao.rr.sebrae.com.br`)
+      kind: Rule
+      services:
+        - name: sistema-avaliacao-service
+          kind: Service
+          namespace: sistema-avaliacao-homolog
+          port: 80
+          scheme: http
+  tls:
+    secretName: ssl-sebrae
