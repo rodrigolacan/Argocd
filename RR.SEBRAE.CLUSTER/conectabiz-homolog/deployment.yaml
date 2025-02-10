@@ -16,7 +16,7 @@ spec:
       imagePullSecrets:
         - name: harbor-secret
       containers:
-        - name: apache-facilita
+        - name: conectabiz
           image: harbor.rr.sebrae.com.br/sebrae.rr.conectabiz-homolog/conectabiz:v1.0.23
           ports:
             - containerPort: 80
@@ -24,6 +24,10 @@ spec:
           env:
             - name: SCRIPT_NAME
               value: script-ssl.sh
+          volumeMounts:
+            - name: laravel-env-volume
+              mountPath: /var/www/html/.env
+              subPath: .env
           volumeMounts:
             - name: tls-secret
               mountPath: /etc/ssl/certs/ca-certificates.crt
