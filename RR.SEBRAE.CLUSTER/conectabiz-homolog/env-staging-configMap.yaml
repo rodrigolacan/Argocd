@@ -13,9 +13,9 @@ data:
     APP_TIMEZONE=America/Boa_Vista
     APP_URL=http://localhost:8000
 
-    APP_LOCALE=en
-    APP_FALLBACK_LOCALE=en
-    APP_FAKER_LOCALE=en_US
+    APP_LOCALE=pt_BR
+    APP_FALLBACK_LOCALE=pt_BR
+    APP_FAKER_LOCALE=pt_BR
 
     APP_MAINTENANCE_DRIVER=file
     # APP_MAINTENANCE_STORE=database
