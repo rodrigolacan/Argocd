@@ -25,10 +25,6 @@ spec:
             - name: SCRIPT_NAME
               value: script-ssl.sh
           volumeMounts:
-            - name: laravel-env-volume
-              mountPath: /var/www/html/.env
-              subPath: .env
-          volumeMounts:
             - name: tls-secret
               mountPath: /etc/ssl/certs/
               readOnly: true
