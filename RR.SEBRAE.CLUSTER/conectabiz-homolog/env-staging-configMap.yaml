@@ -10,7 +10,7 @@ data:
     APP_ENV=staging
     APP_KEY=base64:DIFKWHM3a5sLbDzbRqVYQO0LY/NMuy3BvCTSA+kOfTs= 
     APP_DEBUG=true
-    APP_TIMEZONE=UTC
+    APP_TIMEZONE=America/Boa_Vista
     APP_URL=http://localhost:8000
 
     APP_LOCALE=en
@@ -29,15 +29,13 @@ data:
     LOG_DEPRECATIONS_CHANNEL=null
     LOG_LEVEL=debug
 
-    DB_CONNECTION=sqlsrv
-    DB_HOST=10.23.4.86
-    DB_SECONDARY_HOST=10.23.4.85
-    DB_PORT=1433
-    DB_DATABASE=APPLICATIONS_TESTS
-    DB_DATABASE_TESTS=APPLICATIONS_TESTS
-    DB_USERNAME=api.rr
-    DB_PASSWORD=Svt3090s3@@
-    DB_TRUST_SERVER_CERTIFICATE=false
+    DB_CONNECTION=pgsql
+    DB_HOST=10.23.4.92
+    DB_PORT=5432
+    DB_DATABASE=conectabiz-homolog
+    DB_DATABASE_TESTS=test
+    DB_USERNAME=conectabiz   
+    DB_PASSWORD='(d#Xm)PUsi'
 
     SESSION_DRIVER=database
     SESSION_LIFETIME=120
@@ -76,8 +74,7 @@ data:
 
     VITE_APP_NAME="${APP_NAME}"
 
-    LDAP_HOST = "[rr.sebrae.corp]"
-    LDAP_PORT  = 389
-    LDAP_BSDN = "dc=rr,dc=sebrae,dc=corp"
-    LDAP_USERNAME = "harbor.sebrae@rr.sebrae.corp"
-    LDAP_PASSWORD = "WaNeB#T1%Sc"
+    KEYCLOAK_CLIENT_ID=app-frontend
+    KEYCLOAK_BASE_URL=https://amei.homolog.kubernetes.sebrae.com.br/auth
+    KEYCLOAK_REALM=externo
+    KEYCLOAK_REDIRECT_URI=/callback
