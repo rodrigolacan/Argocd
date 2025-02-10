@@ -30,11 +30,8 @@ spec:
               subPath: .env
           volumeMounts:
             - name: tls-secret
-              mountPath: /etc/ssl/certs/ca-certificates.crt
+              mountPath: /etc/ssl/certs/
               readOnly: true
-            - name: laravel-env-volume
-              mountPath: /var/www/html/.env
-              subPath: .env
       volumes:
         - name: tls-secret
           secret:
