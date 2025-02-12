@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sorteador-service
+  namespace: sorteador
+spec:
+  type: LoadBalancer
+  selector:
+    app: sorteador
+  ports:
+    - name: http
+      port: 80
+      targetPort: 5000
