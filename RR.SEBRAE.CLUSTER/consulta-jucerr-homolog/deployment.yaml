@@ -27,7 +27,7 @@ spec:
           resources:
             requests:
               memory: "20Mi"
-              cpu: "5m"
+              cpu: "20m"
           volumeMounts:
             - name: tls-secret
               mountPath: /etc/ssl/certs/
