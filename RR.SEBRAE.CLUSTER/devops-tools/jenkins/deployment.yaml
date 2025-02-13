@@ -31,7 +31,7 @@ spec:
           image: jenkins/jenkins:lts
           resources:
             requests:
-              memory: "500Mi"
+              memory: "1500Mi"
               cpu: "500m"
           ports:
             - name: httpsport
