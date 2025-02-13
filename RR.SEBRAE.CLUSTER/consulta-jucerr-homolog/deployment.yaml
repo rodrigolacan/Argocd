@@ -4,7 +4,7 @@ metadata:
   name: consulta-jucerr
   namespace: consulta-jucerr-homolog
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: consulta-jucerr
@@ -24,6 +24,10 @@ spec:
           env:
             - name: SCRIPT_NAME
               value: script-ssl.sh
+          resources:
+            requests:
+              memory: "20Mi"
+              cpu: "5m"
           volumeMounts:
             - name: tls-secret
               mountPath: /etc/ssl/certs/
