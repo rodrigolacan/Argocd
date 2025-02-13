@@ -32,7 +32,7 @@ spec:
           resources:
             requests:
               memory: "1500Mi"
-              cpu: "500m"
+              cpu: "600m"
           ports:
             - name: httpsport
               containerPort: 8443
