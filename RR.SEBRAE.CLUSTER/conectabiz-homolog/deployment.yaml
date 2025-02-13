@@ -4,7 +4,7 @@ metadata:
   name: conecta-busines
   namespace: conectabiz-homolog
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: conectabiz
@@ -24,6 +24,10 @@ spec:
           env:
             - name: SCRIPT_NAME
               value: script-ssl.sh
+          resources:
+            requests:
+              memory: "20Mi"
+              cpu: "5m"
           volumeMounts:
             - name: tls-secret
               mountPath: /etc/ssl/certs/
