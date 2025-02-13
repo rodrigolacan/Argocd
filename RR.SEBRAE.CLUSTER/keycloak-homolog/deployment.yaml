@@ -53,6 +53,10 @@ spec:
                 secretKeyRef:
                   name: keycloak-https-cert
                   key: password.txt
+          resources:
+            requests:
+              memory: "1000Mi"
+              cpu: "4m"
           volumeMounts:
               - name: keycloak-certs
                 mountPath: /etc/keycloak/certs
