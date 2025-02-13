@@ -4,7 +4,7 @@ metadata:
   name: sebraedocs-deployment
   namespace: sebraedocs
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: sebraedocs
@@ -20,3 +20,7 @@ spec:
           image: harbor.rr.sebrae.com.br/sebrae-docs/sebraedocs:v1.0.4
           ports:
             - containerPort: 8000
+          resources:
+            requests:
+              memory: "80Mi"
+              cpu: "4m"
