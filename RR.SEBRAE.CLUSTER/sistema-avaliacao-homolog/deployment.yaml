@@ -31,6 +31,10 @@ spec:
             - name: laravel-env-volume
               mountPath: /var/www/html/.env
               subPath: .env
+          resources:
+            requests:
+              memory: "200Mi"
+              cpu: "3m"
       volumes:
         - name: laravel-env-volume
           configMap:
