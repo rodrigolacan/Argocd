@@ -21,6 +21,9 @@ spec:
           ports:
             - containerPort: 80
             - containerPort: 8000
+          env:
+          - name: VITE_ROOT_URL_PROXY
+            value: "/api"
           resources:
             requests:
               memory: "100Mi"
