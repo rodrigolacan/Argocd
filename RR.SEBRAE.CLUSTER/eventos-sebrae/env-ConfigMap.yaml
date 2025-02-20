@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: quasar-env
+  namespace: eventos-sebrae
+data:
+  .env: |
+    VITE_API_KEY='jnoMwlTtzySxbFuLiMrn6wp1OhLkxPrwSSQBydkemsHB7NxSrEO8bqT1mgJMLYAozqFHjJZXUlJi+I7lLBXpm3Hvv1oZR7BgjZG/e3qjJTg='

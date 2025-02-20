@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consulta-cpf
+  namespace: eventos-sebrae
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consulta-cpf
+  template:
+    metadata:
+      labels:
+        app: consulta-cpf
+    spec:
+      imagePullSecrets:
+        - name: harbor-secret
+      containers:
+        - name: consulta-cpf
+          image: harbor.rr.sebrae.com.br/eventos-sebrae/consulta-cpf:v1.0.0
+          ports:
+            - containerPort: 80
+            - containerPort: 8000
+          resources:
+            requests:
+              memory: "100Mi"
+              cpu: "250m"
+          volumeMounts:
+            - name: quasar-env-volume
+              mountPath: /user/share/html/.env.local
+              subPath: .env.local
+      volumes:
+        - name: quasar-env-volume
+          configMap:
+            name: quasar-env
