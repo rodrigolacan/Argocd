@@ -17,6 +17,6 @@ spec:
         - name: harbor-secret
       containers:
         - name: sorteador-server
-          image: harbor.rr.sebrae.com.br/sorteador/sorteador:v1.0.0
+          image: harbor.rr.sebrae.com.br/sorteador/sorteador:v1.0.2
           ports:
             - containerPort: 5000
