@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: consulta-jucerr-service
-  namespace: consulta-jucerr-homolog
+  name: consulta-cpf-service
+  namespace: eventos-sebrae
 spec:
   type: LoadBalancer
   selector:
