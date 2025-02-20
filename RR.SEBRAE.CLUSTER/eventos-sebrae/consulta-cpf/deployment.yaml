@@ -17,7 +17,7 @@ spec:
         - name: harbor-secret
       containers:
         - name: consulta-cpf
-          image: harbor.rr.sebrae.com.br/eventos-sebrae/consulta-cpf:v1.0.4
+          image: harbor.rr.sebrae.com.br/eventos-sebrae/consulta-cpf:v1.0.5
           ports:
             - containerPort: 80
             - containerPort: 8000
