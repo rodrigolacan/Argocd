@@ -4,7 +4,7 @@ metadata:
   name: consulta-cpf-service
   namespace: eventos-sebrae
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: consulta-cpf
   ports:
