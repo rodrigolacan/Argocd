@@ -1,0 +1,19 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: consulta-cpf-ingressroute
+  namespace: eventos-sebrae
+spec:
+  entryPoints:
+    - websecure                                  
+  routes:
+    - match: Host(`qrcode.rr.sebrae.com.br`)
+      kind: Rule
+      services:
+        - name: consulta-cpf-service
+          kind: Service
+          namespace: eventos-sebrae
+          port: 80
+          scheme: http
+  tls:
+    secretName: ssl-sebrae
