@@ -5,5 +5,4 @@ metadata:
   namespace: eventos-sebrae
 data:
   .env: |
-    VITE_API_KEY='jnoMwlTtzySxbFuLiMrn6wp1OhLkxPrwSSQBydkemsHB7NxSrEO8bqT1mgJMLYAozqFHjJZXUlJi+I7lLBXpm3Hvv1oZR7BgjZG/e3qjJTg='
-    VITE_ROOT_URL_PROXY='/api'
+    VITE_API_KEY='UQrzilG7toRjIY9LNmvH1vbru//iLKjOhkvwl4hpeKHUJv6VDREFvtCsYQg5JPIcahMECCdtMOvVdqLcte/Nyx+mbGgZvuFDoE8lKfYXwDY='
